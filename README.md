@@ -19,40 +19,8 @@ Este projeto é um gerador de código CSS com inteligência artificial. Ele perm
 - `package.json` - dependências e script de inicialização.
 - `.env.example` - exemplo de configuração da chave com variável de ambiente.
 
-## Configuração local
 
-1. Copie `.env.example` para `.env`:
 
-   ```bash
-   copy .env.example .env
-   ```
 
-2. Abra o arquivo `.env` e insira sua chave:
 
-   ```env
-   GROQ_API_KEY=your_groq_api_key_here
-   ```
 
-3. Instale as dependências:
-
-   ```bash
-   npm install
-   ```
-
-4. Inicie o servidor:
-
-   ```bash
-   npm start
-   ```
-
-5. Acesse o app em:
-
-   ```
-   http://localhost:3000
-   ```
-
-## Observações de segurança
-
-- Nunca deixe a chave da API exposta no frontend.
-- O arquivo `.env` está listado em `.gitignore` para evitar commit acidental.
-- Mantenha apenas `.env.example` no repositório.
