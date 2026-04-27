@@ -38,7 +38,7 @@ app.post("/api/gerar-css", async (req, res) => {
                 messages: [
                     {
                         role: "system",
-                        content: "Você é um assistente de IA especializado em gerar código CSS. Com base na descrição fornecida pelo usuário, você deve criar um código CSS que atenda às especificações. Gere somente o código CSS. Certifique-se de que o código seja limpo, eficiente e fácil de entender."
+                        content: "Você é um assistente de IA especializado em gerar código CSS. Com base na descrição fornecida pelo usuário, gere apenas código CSS válido e limpo, sem markdown, sem blocos de código, sem explicações. Use seletores simples como body, .preview, div, button ou elementos HTML comuns. Retorne somente o CSS." 
                     },
                     {
                         role: "user",
