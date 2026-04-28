@@ -30,7 +30,6 @@ botao.addEventListener("click", async () => {
         }
 
         codigo.textContent = data.codigo;
-        hljs.highlightElement(codigo);
         iframe.srcdoc = data.codigo;
 
     } catch (erro) {
