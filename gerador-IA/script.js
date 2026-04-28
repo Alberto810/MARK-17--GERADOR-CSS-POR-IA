@@ -1,0 +1,79 @@
+const botao = document.querySelector(".botao-gerar");
+const textarea = document.querySelector(".caixa-texto");
+const codigo = document.querySelector(".bloco-codigo");
+const iframe = document.querySelector(".resultado-codigo");
+
+botao.addEventListener("click", async () => {
+    const prompt = textarea.value;
+
+    if (!prompt) {
+        alert("Digite algo!");
+        return;
+    }
+
+    botao.disabled = true;
+    botao.textContent = "Gerando...";
+
+    try {
+        const resposta = await fetch("/api/gerar-css", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ input: prompt }),
+        });
+
+        const data = await resposta.json();
+
+        if (!resposta.ok || data.error) {
+            throw new Error(data.error || "Resposta inválida do servidor.");
+        }
+
+        codigo.textContent = data.codigo;
+        iframe.srcdoc = data.codigo;
+
+    } catch (erro) {
+        alert(`Erro: ${erro.message}`);
+    }
+
+    botao.disabled = false;
+    botao.textContent = "Gerar Código ⚡️";
+});
+
+async function gerarCodigo() {
+    const input = document.querySelector(".botao-gerar").value.trim();
+    const blocoCodigo = document.querySelector(".bloco-codigo");
+    const resultadoCodigo = document.querySelector(".resultado-codigo");
+
+    if (!input) {
+        blocoCodigo.textContent = "Por favor, descreva a aparência desejada para o CSS.";
+        resultadoCodigo.srcdoc = "";
+        return;
+    }
+
+    const resposta = await fetch(endereco, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ input })
+    });
+
+    const dados = await resposta.json();
+
+    if (!resposta.ok || dados.error) {
+        blocoCodigo.textContent = `Erro: ${dados.error || 'Resposta inválida do servidor.'}`;
+        resultadoCodigo.srcdoc = "";
+        return;
+    }
+
+    const rawResultado = dados.choices?.[0]?.message?.content || "Nenhum resultado retornado.";
+    const resultado = cleanCSS(rawResultado);
+
+    console.log('raw:', rawResultado);
+    console.log('clean:', resultado);
+
+    blocoCodigo.textContent = resultado;
+    resultadoCodigo.srcdoc = buildPreviewHtml(resultado);
+}
+
