@@ -52,9 +52,11 @@ Regras:
 - Retorne primeiro o HTML, depois o CSS e se houver, o JavaScript
 - Sem explicações
 - O código deve sair bem formatado
-- Deve funcionar em iframe
+- O código deve ser leve e otimizado
+- Se o prompt for algo específico, siga à risca o que foi pedido, se for algo genérico, use sua criatividade para criar algo interessante.
 - Visual moderno
 - Pode usar animações
+- Se o promt for curto, como exemplo "site de portfólio" ou "bola azul", use sua criatividade para criar algo interessante, moderno e funcional, seguindo as regras acima.
                         `,
                     },
                     {
@@ -87,7 +89,5 @@ Regras:
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
-
-
 
 
