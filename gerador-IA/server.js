@@ -20,7 +20,7 @@ function limparCodigo(texto) {
         .trim();
 }
 
-app.get('/', (req, res) => {
+app.get('/index.html', (req, res) => {
     res.send('Servidor rodando!');
 });
 
