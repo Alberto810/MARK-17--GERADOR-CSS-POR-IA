@@ -21,9 +21,8 @@ function limparCodigo(texto) {
 }
 
 app.get('/', (req, res) => {
-    res.send('Servidor rodando!');
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
-
 
 app.post("/api/gerar-css", async (req, res) => {
     const { input } = req.body;
