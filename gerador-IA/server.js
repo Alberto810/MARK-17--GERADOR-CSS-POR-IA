@@ -20,6 +20,11 @@ function limparCodigo(texto) {
         .trim();
 }
 
+app.get('/', (req, res) => {
+    res.send('Servidor rodando!');
+});
+
+
 app.post("/api/gerar-css", async (req, res) => {
     const { input } = req.body;
 
