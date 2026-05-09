@@ -40,4 +40,12 @@ botao.addEventListener("click", async () => {
     botao.textContent = "Gerar Código ⚡️";
 });
 
+for (let i = 0; i < 500; i++) {
+    const estrela = document.createElement('div');
+    estrela.classList.add('estrela');
+    estrela.style.top = `${Math.random() * window.innerHeight}px`;
+    estrela.style.left = `${Math.random() * window.innerWidth}px`;
+    document.body.appendChild(estrela);
+}
+
 
