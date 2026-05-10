@@ -1,3 +1,5 @@
 ﻿.env
+#Ignore file gitignore
 .gitignore
-style.css
+# Ignore node_modules
+node_modules/

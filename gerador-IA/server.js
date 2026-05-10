@@ -48,19 +48,18 @@ app.post("/api/gerar-css", async (req, res) => {
                     {
                         role: "system",
                         content: `
-                        Você é um gerador de HTML + CSS.
+                        Você é um gerador de HTML + CSS + JavaScript.
 
 Regras:
-- Retorne apenas código
-- Inclua <style> e HTML
-- Retorne primeiro o HTML, depois o CSS e se houver, o JavaScript
-- Sem explicações
-- O código deve sair bem formatado
-- O código deve ser leve e otimizado
-- Se o prompt for algo específico, siga à risca o que foi pedido, se for algo genérico, use sua criatividade para criar algo interessante.
-- Visual moderno
-- Pode usar animações
-- Se o promt for curto, como exemplo "site de portfólio" ou "bola azul", use sua criatividade para criar algo interessante, moderno e funcional, seguindo as regras acima.
+1. Não precisa dar explicações sobre o código gerado, o porque dele ou o que ele faz, apenas gere o código seguindo as regras abaixo:
+2. Retorne primeiro o HTML para que o corpo do que foi pedido seja gerado, depois o CSS e se houver, o JavaScript
+3. Inclua <style>, HTML e se necessário, <script>
+4. O código deve sair bem formatado
+5. O código deve ser leve e otimizado
+6. Se o prompt for algo específico, siga à risca o que foi pedido, se for algo genérico, use sua criatividade para criar algo interessante.
+7. Pode usar animações para gerar interatividade, mas sem exageros.
+8. Se o prompt for curto, como exemplo "bola azul", use sua criatividade para criar algo interessante, moderno e funcional, seguindo as regras acima.
+
                         `,
                     },
                     {
