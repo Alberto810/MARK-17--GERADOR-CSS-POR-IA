@@ -1,9 +1,13 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const path = require("path");
-const cors = require("cors");
+import express from "express";
+import dotenv from "dotenv";
+import path from "path";
+import cors from "cors";
+import { fileURLToPath } from "url";
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -97,4 +101,4 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // Necessário para a Vercel
-module.exports = app;
+export default app;
