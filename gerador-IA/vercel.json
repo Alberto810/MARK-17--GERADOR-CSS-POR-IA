@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
         {
-            "src": "api/gerar-css.js",
+            "src": "api/gerar-css",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
             "src": "/api/(.*)",
-            "dest": "/api/gerar-css.js"
+            "dest": "/api/gerar-css"
         },
         {
             "src": "/(.*)",
