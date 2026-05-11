@@ -1,40 +1,9 @@
 {
     "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "server.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "*.html",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "*.css",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "*.js",
-            "use": "@vercel/static",
-            "config": {
-                "excludes": [
-                    "server.js"
-                ]
-            }
-        }
-    ],
-    "routes": [
-        {
-            "src": "/style.css",
-            "dest": "/style.css"
-        },
-        {
-            "src": "/script.js",
-            "dest": "/script.js"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/server.js"
+            "source": "/api/(.*)",
+            "destination": "/api/gerar-css"
         }
     ]
 }
