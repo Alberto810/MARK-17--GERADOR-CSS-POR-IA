@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const API_KEY = process.env.GROQ_API_KEY;
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors());
 app.use(express.json());
 
@@ -21,7 +21,7 @@ function limparCodigo(texto) {
 }
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+    res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 app.post("/api/gerar-css", async (req, res) => {
