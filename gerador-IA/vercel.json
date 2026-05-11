@@ -1,9 +1,19 @@
 {
     "version": 2,
-    "rewrites": [
+    "builds": [
         {
-            "source": "/api/(.*)",
-            "destination": "/api/gerar-css"
+            "src": "api/gerar-css.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/api/gerar-css.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1"
         }
     ]
 }
