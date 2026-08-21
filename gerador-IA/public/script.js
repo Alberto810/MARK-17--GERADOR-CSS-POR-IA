@@ -12,7 +12,7 @@ botao.addEventListener("click", async () => {
     }
 
     botao.disabled = true;
-    botao.textContent = "Gerando...";
+    botao.textContent = "Gerando...⚡️";
 
     try {
         const resposta = await fetch("/api/gerar-css", {
