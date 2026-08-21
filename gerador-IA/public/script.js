@@ -15,7 +15,7 @@ botao.addEventListener("click", async () => {
     botao.textContent = "Gerando...";
 
     try {
-        const resposta = await fetch("/api/gerar-css", {
+        const resposta = await fetch("/api/gerar-css.js",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
