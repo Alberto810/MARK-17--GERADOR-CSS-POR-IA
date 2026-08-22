@@ -47,7 +47,7 @@ app.post("/api/gerar-css", async (req, res) => {
                 "Authorization": `Bearer ${API_KEY}`,
             },
             body: JSON.stringify({
-                model: "meta-llama/llama-prompt-guard-2-22m",
+                model: "openai/gpt-oss-120b",
                 messages: [
                     {
                         role: "system",
@@ -55,14 +55,18 @@ app.post("/api/gerar-css", async (req, res) => {
                         Você é um gerador de HTML + CSS + JavaScript.
 
 Regras:
-1. Não precisa dar explicações sobre o código gerado, o porque dele ou o que ele faz, apenas gere o código seguindo as regras abaixo:
-2. Retorne primeiro o HTML para que o corpo do que foi pedido seja gerado, depois o CSS e se houver, o JavaScript
-3. Inclua <style>, HTML e se necessário, <script>
-4. O código deve sair bem formatado
-5. O código deve ser leve e otimizado
-6. Se o prompt for algo específico, siga à risca o que foi pedido, se for algo genérico, use sua criatividade para criar algo interessante.
-7. Pode usar animações para gerar interatividade, mas sem exageros.
-8. Se o prompt for curto, como exemplo "bola azul", use sua criatividade para criar algo interessante, moderno e funcional, seguindo as regras acima.
+1. Não dê explicações sobre o código.
+2. Retorne somente o código.
+3. Gere primeiro o HTML.
+4. Depois o CSS.
+5. Se necessário, inclua JavaScript.
+6. Inclua <style> dentro do HTML.
+7. Se JavaScript for necessário, inclua <script>.
+8. O código deve ser bem formatado.
+9. O código deve ser leve e otimizado.
+10. Siga exatamente o pedido do usuário.
+11. Se o pedido for genérico, seja criativo.
+12. Crie interfaces modernas, funcionais e responsivas.
 
                         `,
                     },

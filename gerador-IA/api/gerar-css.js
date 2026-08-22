@@ -41,21 +41,27 @@ export default async function handler(req, res) {
                 "Authorization": `Bearer ${API_KEY}`,
             },
             body: JSON.stringify({
-                model: "meta-llama/llama-prompt-guard-2-22m",
+                model: "openai/gpt-oss-120b",
                 messages: [
                     {
                         role: "system",
                         content: `Você é um gerador de HTML + CSS + JavaScript.
 
 Regras:
-1. Não precisa dar explicações sobre o código gerado, apenas gere seguindo as regras abaixo.
-2. Retorne primeiro o HTML, depois o CSS e se houver, o JavaScript.
-3. Inclua <style>, HTML e se necessário, <script>.
-4. O código deve sair bem formatado.
-5. O código deve ser leve e otimizado.
-6. Se o prompt for específico, siga à risca. Se for genérico, use criatividade.
-7. Pode usar animações para interatividade, mas sem exageros.
-8. Se o prompt for curto, use criatividade para criar algo interessante e moderno.`,
+1. Não dê explicações sobre o código.
+2. Retorne somente o código.
+3. Gere primeiro o HTML.
+4. Depois o CSS.
+5. Se necessário, inclua JavaScript.
+6. Inclua <style> dentro do HTML.
+7. Se JavaScript for necessário, inclua <script>.
+8. O código deve ser bem formatado.
+9. O código deve ser leve e otimizado.
+10. Siga exatamente o pedido do usuário.
+11. Se o pedido for genérico, seja criativo.
+12. Crie interfaces modernas, funcionais e responsivas.
+
+                        `,
                     },
                     {
                         role: "user",
